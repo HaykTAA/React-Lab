@@ -6,6 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import i18next from "i18next";
 import {useState} from "react";
 import Modal from "../ui/Modal.jsx";
+import DropDown from "../ui/DropDown.jsx";
 
 
 const Header = () => {
@@ -19,7 +20,6 @@ const Header = () => {
     const navigate = useNavigate()
     const [visible, setVisible] = useState(false);
     const [open, setOpen] = useState(false);
-
     const limit = () => {
         navigate(currentUser ? HOME_PAGE : FIRST_PAGE);
     };
@@ -70,10 +70,11 @@ const Header = () => {
                     )
                 }
                 {open && currentUser && (
-                    <Modal
+                    <DropDown
+                        className="top-[60px] left-[850px] w-[100px] h-[140px] border flex justify-center items-center border-black bg-white"
                         setVisible={setOpen}
                     >
-                        <div className="flex gap-3">
+                        <div className="flex flex-col gap-3">
                             <Button
                                 onClick={handleLogOut}
                                 className={"font-bold"}
@@ -88,7 +89,7 @@ const Header = () => {
                                 Delete
                             </Button>
                         </div>
-                    </Modal>)
+                    </DropDown>)
                 }
             </div>
             {currentUser ?

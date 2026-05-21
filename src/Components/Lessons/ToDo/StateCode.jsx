@@ -3,9 +3,7 @@ import React, {useState} from "react";
 
 function TodoUseState() {
     const [title, setTitle] =useState("");
-    const [todos, setTodos] = useState([
-
-    ])
+    const [todos, setTodos] = useState([])
     const [id, setId] = useState(null)
     const [error, setError] = useState('')
 

@@ -17,6 +17,7 @@ const Home = () => {
         {id: 6, name: "nestedRoutes", project: "url",},
         {id: 7, name: "translate", project: "Translate the word hello",},
         {id: 8, name: "uiComponents", project: "Component button",},
+        {id: 9, name: "dataBase", project: "To Do List",},
     ]
 
     return (

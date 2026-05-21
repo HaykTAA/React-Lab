@@ -1,7 +1,8 @@
-import {Swiper} from "swiper/react";
-
 const SwiperCode =
     `
+fistly install this module
+npm i swiper
+
     import React from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Zoom, Navigation, Pagination } from 'swiper/modules';

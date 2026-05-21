@@ -18,6 +18,8 @@ import {UiComponentsCode} from "../Components/Lessons/uiComponents/UiComponentsC
 import {TranslateCode} from "../Components/Lessons/translate/TranslateCode.jsx";
 import {NestedRoutesCode} from "../Components/Lessons/NestedRoutes/NestedRoutesCode.jsx";
 import {ValidationCode} from "../Components/Lessons/validation/ValidationCode.jsx";
+import Db from "../Components/Lessons/db-json/Db.jsx";
+import {DbCode} from "../Components/Lessons/db-json/DbCode.jsx";
 
 const TopicModal = () => {
     const navigate = useNavigate();
@@ -63,6 +65,10 @@ const TopicModal = () => {
             code: UiComponentsCode,
         },
 
+        dataBase: {
+            component:<Db/>,
+            code: DbCode,
+        },
     }
 
     const currentTopic = topics[topic]
