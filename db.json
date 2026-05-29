@@ -1,4 +1,80 @@
 {
-  "apps": [],
+  "apps": [
+    {
+      "name": "ae",
+      "id": "vLIbzbRWKAQ"
+    },
+    {
+      "name": "sdas",
+      "id": "6hHZoeg-AwM"
+    }
+  ],
+  "currentUser": {
+    "username": "a",
+    "email": "a@a.a",
+    "password": "8Aaaaaaa",
+    "id": 1
+  },
+  "users": [
+    {
+      "username": "b",
+      "email": "b@b.b",
+      "password": "1Bbbbbbb",
+      "id": "kLLU0uilX-I"
+    },
+    {
+      "username": "a",
+      "email": "a@a.a",
+      "password": "8Aaaaaaa",
+      "id": "okBsC6b5p1U"
+    }
+  ],
+  "topicsHome": [
+    {
+      "id": "1",
+      "name": "props",
+      "project": "Array"
+    },
+    {
+      "id": "2",
+      "name": "useState",
+      "project": "ToDo"
+    },
+    {
+      "id": "3",
+      "name": "swiper",
+      "project": "Image slides"
+    },
+    {
+      "id": "4",
+      "name": "useEffect",
+      "project": "Pagination"
+    },
+    {
+      "id": "5",
+      "name": "validation",
+      "project": "Inputs"
+    },
+    {
+      "id": "6",
+      "name": "nestedRoutes",
+      "project": "url"
+    },
+    {
+      "id": "7",
+      "name": "translate",
+      "project": "Translate the word hello"
+    },
+    {
+      "id": "8",
+      "name": "uiComponents",
+      "project": "Component button"
+    },
+    {
+      "id": "9",
+      "name": "dataBase",
+      "project": "To Do List"
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

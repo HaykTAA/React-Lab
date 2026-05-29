@@ -1,39 +1,29 @@
-// import React from 'react';
 import Input from "../Components/ui/Input.jsx";
 import Button from "../Components/ui/Button.jsx";
 import Form from "../Components/ui/Form.jsx";
 import {LOGIN_PAGE} from "./paths.jsx";
 import {useNavigate} from "react-router-dom";
 import { useForm } from "react-hook-form"
-import {usernameValidation,emailValidation,passwordValidation} from "../Components/tools/validation.js";
+import {usernameValidation, emailValidation, passwordValidation} from "../Components/tools/validation.js";
+import axios from "axios";
 
 const Register = () => {
     const {
         register,
         handleSubmit,
-        formState:{errors,isValid
-        }} = useForm({mode: 'all'});
+        formState: { errors, isValid }
+    } = useForm({mode: 'all'});
 
     const navigate = useNavigate()
 
-    const handleRegistration = (data) =>{
-        const userData = {
-            username: data.username,
-            email: data.email,
-            password: data.password,
-            id: Math.random(),
-        }
-        const users = JSON.parse(localStorage.getItem("users")) || []
-        users.push(userData)
-
-        localStorage.setItem("users",JSON.stringify(users))
-        navigate( LOGIN_PAGE)
+    const handleRegistration = async (data) => {
+        await axios.post("http://localhost:3000/users", data);
+        navigate(LOGIN_PAGE)
     }
 
     return (
         <div className="flex justify-center items-center h-full w-full">
             <Form onSubmit={handleSubmit(handleRegistration)}>
-
                 <Input
                     type={'text'}
                     placeholder={'Username'}
@@ -52,7 +42,6 @@ const Register = () => {
                     validation={emailValidation}
                 />
                 {errors.email && <span className="text-sm text-red-500">{errors.email.message}</span>}
-
                 <Input
                     type="password"
                     placeholder="Password"
@@ -62,11 +51,7 @@ const Register = () => {
                     validation={passwordValidation}
                 />
                 {errors.password && <span className="text-sm text-red-500">{errors.password.message}</span>}
-                <Button
-
-                >
-                    Register
-                </Button>
+                <Button>Register</Button>
             </Form>
         </div>
     );
