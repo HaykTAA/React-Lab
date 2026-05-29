@@ -27,7 +27,7 @@ const Header = () => {
 
     const getCurrentUser = async () => {
         const res = await axios.get("http://localhost:3000/currentUser");
-        const isEmpty = !res.data.username;  // ✅ check if empty object
+        const isEmpty = !res.data.username;
         setCurrentUser(isEmpty ? null : res.data);
     }
 
@@ -87,7 +87,7 @@ const Header = () => {
                 )}
                 {open && currentUser && (
                     <DropDown
-                        className="top-[60px] left-[850px] w-[100px] h-[140px] border flex justify-center items-center border-black bg-white"
+                        className="top-15 left-212.5 w-25 h-35 border flex justify-center items-center border-black bg-white"
                         setVisible={setOpen}
                     >
                         <div className="flex flex-col gap-3">

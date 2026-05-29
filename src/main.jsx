@@ -13,7 +13,7 @@ i18next
     .use(I18nextBrowserLanguageDetector)
     .use(I18NextHttpBackend)
     .init({
-        supportedLngs: ['en', 'am', 'ru'],
+        supportedLngs: ['en', 'am', 'ru',"hy","eng","rus"],
         fallbackLng: 'en',
         backend: {
             loadPath: "/locales/{{lng}}/translation.json"

@@ -3,23 +3,44 @@ import Button from "../Components/ui/Button.jsx";
 import Form from "../Components/ui/Form.jsx";
 import {LOGIN_PAGE} from "./paths.jsx";
 import {useNavigate} from "react-router-dom";
-import { useForm } from "react-hook-form"
+import {useForm} from "react-hook-form"
 import {usernameValidation, emailValidation, passwordValidation} from "../Components/tools/validation.js";
 import axios from "axios";
 
 const Register = () => {
+    const navigate = useNavigate()
     const {
         register,
         handleSubmit,
-        formState: { errors, isValid }
+        formState: {errors, isValid}
     } = useForm({mode: 'all'});
-
-    const navigate = useNavigate()
 
     const handleRegistration = async (data) => {
         await axios.post("http://localhost:3000/users", data);
         navigate(LOGIN_PAGE)
     }
+    //
+    // const topicResponse = async () => {
+    //     const topicResp = await axios.get("http://localhost:3000/topicsHome");
+    //     const children = {}
+    //     topicResp.data.forEach((topic) => {
+    //         children[topic.name] = false
+    //     })
+    //
+    //     return children
+    // }
+    //
+    // const newUserResponse = async () => {
+    //     const newUser = {
+    //         username,
+    //         email,
+    //         password,
+    //         id,
+    //         children
+    //     }
+    //     await axios.post("http://localhost:3000/users", newUser);
+    //
+    // }
 
     return (
         <div className="flex justify-center items-center h-full w-full">
