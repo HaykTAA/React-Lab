@@ -20,9 +20,9 @@ const Login = () => {
 
     const login = async (data) => {
         const res = await axios.get("http://localhost:3000/users")
-        const user = res.data.find(e => e.email === data.email && e.password === data.password)
+        const user = res.data.find(e => e.email === data.email && e.password === data.password);
         if (user) {
-            await axios.put("http://localhost:3000/currentUser", { ...user, id: 1 });
+            await axios.put("http://localhost:3000/currentUser", { ...user,});
             navigate(HOME_PAGE)
             reset()
         } else {

@@ -19,28 +19,6 @@ const Register = () => {
         await axios.post("http://localhost:3000/users", data);
         navigate(LOGIN_PAGE)
     }
-    //
-    // const topicResponse = async () => {
-    //     const topicResp = await axios.get("http://localhost:3000/topicsHome");
-    //     const children = {}
-    //     topicResp.data.forEach((topic) => {
-    //         children[topic.name] = false
-    //     })
-    //
-    //     return children
-    // }
-    //
-    // const newUserResponse = async () => {
-    //     const newUser = {
-    //         username,
-    //         email,
-    //         password,
-    //         id,
-    //         children
-    //     }
-    //     await axios.post("http://localhost:3000/users", newUser);
-    //
-    // }
 
     return (
         <div className="flex justify-center items-center h-full w-full">

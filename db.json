@@ -1,44 +1,17 @@
 {
-  "apps": [
-    {
-      "name": "ae",
-      "id": "vLIbzbRWKAQ"
-    },
-    {
-      "name": "sdas",
-      "id": "6hHZoeg-AwM"
-    }
-  ],
+  "apps": [],
   "currentUser": {
     "username": "a",
     "email": "a@a.a",
     "password": "8Aaaaaaa",
-    "id": 1
+    "id": "CQ7_ht2AG80"
   },
   "users": [
-    {
-      "name": "",
-      "email": "",
-      "password": "",
-      "id": "sdmkmlsmkckds"
-    },
-    {
-      "username": "b",
-      "email": "b@b.b",
-      "password": "1Bbbbbbb",
-      "id": "-uJNK-5T0uA"
-    },
-    {
-      "username": "b",
-      "email": "b@b.b",
-      "password": "1Bbbbbbb",
-      "id": "kLLU0uilX-I"
-    },
     {
       "username": "a",
       "email": "a@a.a",
       "password": "8Aaaaaaa",
-      "id": "okBsC6b5p1U"
+      "id": "CQ7_ht2AG80"
     }
   ],
   "topicsHome": [

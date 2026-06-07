@@ -3,6 +3,10 @@ import {useState} from "react";
 function Topic({ onStart, name, project }) {
     const [open, setOpen] = useState(false);
 
+    const getStatus =async () =>{
+
+    }
+
     return (
         <div
             className="w-full max-w-3xl mx-auto bg-cyan-950 border border-gray-700 rounded-2xl shadow-lg p-6 space-y-5">

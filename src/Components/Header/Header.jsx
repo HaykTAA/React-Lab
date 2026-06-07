@@ -18,8 +18,8 @@ const Header = () => {
     const [currentUser, setCurrentUser] = useState(null)
     const [users, setUsers] = useState(null)
     const navigate = useNavigate()
-    const [visible, setVisible] = useState(false);
-    const [open, setOpen] = useState(false);
+    const [isAddTopicModalOpen, setIsAddTopicModalOpen] = useState(false);
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
     const limit = () => {
         navigate(currentUser ? HOME_PAGE : FIRST_PAGE);
@@ -39,29 +39,41 @@ const Header = () => {
     useEffect(() => {
         getCurrentUser();
         getUsers();
-        const interval = setInterval(getCurrentUser, 500);
-        return () => clearInterval(interval);
     }, [])
 
     const handleLogOut = async () => {
-        await axios.put("http://localhost:3000/currentUser", { id: 1 });
-        setCurrentUser(null);
-        navigate(FIRST_PAGE);
-        setOpen(false);
-    }
+        try {
+            await axios.patch("http://localhost:3000/currentUser", {
+                id: null,
+                username: null,
+                email: null,
+                password: null
+            });
+            setCurrentUser(null);
+            setIsDropdownOpen(false);
+            navigate(FIRST_PAGE);
+        } catch (err) {
+            console.error("Logout failed:", err);
+        }
+    };
 
     const handleDelete = async () => {
-        if (!users || !currentUser) return;
-        const filteredUsers = users.filter(e => e.id !== currentUser.id);
-        await axios.put("http://localhost:3000/currentUser", { id: 1 });
-        setCurrentUser(null);
-        await Promise.all(filteredUsers.map(user =>
-            axios.put(`http://localhost:3000/users/${user.id}`, user)
-        ));
-        setUsers(filteredUsers);
-        navigate(FIRST_PAGE);
-        setOpen(false);
-    }
+        if (!currentUser) return;
+        try {
+            await axios.delete(`http://localhost:3000/users/${currentUser.id}`);
+            await axios.patch("http://localhost:3000/currentUser", {
+                id: null,
+                username: null,
+                email: null,
+                password: null
+            });
+            setCurrentUser(null);
+            setIsDropdownOpen(false);
+            navigate(FIRST_PAGE);
+        } catch (err) {
+            console.error("Account deletion failed:", err);
+        }
+    };
 
     return (
         <div className="h-15 w-full flex justify-between items-center gap-6 px-78">
@@ -77,7 +89,7 @@ const Header = () => {
             <div>
                 {currentUser && (
                     <div className="flex gap-5">
-                        <div className="flex gap-2 items-center" onClick={() => setOpen(true)}>
+                        <div className="flex gap-2 items-center" onClick={() => setIsDropdownOpen(true)}>
                             <CgProfile className="size-6" />
                             <div className="text-xl capitalize">
                                 {currentUser.username}
@@ -85,10 +97,10 @@ const Header = () => {
                         </div>
                     </div>
                 )}
-                {open && currentUser && (
+                {isDropdownOpen && currentUser && (
                     <DropDown
                         className="top-15 left-212.5 w-25 h-35 border flex justify-center items-center border-black bg-white"
-                        setVisible={setOpen}
+                        setVisible={setIsDropdownOpen}
                     >
                         <div className="flex flex-col gap-3">
                             <Button onClick={handleLogOut} className={"font-bold"}>
@@ -105,7 +117,7 @@ const Header = () => {
                 <Button
                     className={"bg-black text-white rounded-lg px-5 py-4 text-l font-bold"}
                     children={`+ Add Topic`}
-                    onClick={() => setVisible(true)}
+                    onClick={() => setIsAddTopicModalOpen(true)}
                 />
                 :
                 languages.map(el => (
@@ -122,8 +134,8 @@ const Header = () => {
                     </div>
                 ))
             }
-            {visible && (
-                <Modal setVisible={setVisible} />
+            {isAddTopicModalOpen && (
+                <Modal setVisible={setIsAddTopicModalOpen} />
             )}
         </div>
     );
