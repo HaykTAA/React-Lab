@@ -1,10 +1,10 @@
+export const ValidationCode =
+`
 import React from 'react';
 import Input from "../../ui/Input.jsx";
 import {emailValidation, passwordValidation, usernameValidation} from "../../tools/validation.js";
 import Button from "../../ui/Button.jsx";
 import {useForm} from "react-hook-form";
-import FileUploading from "../../ui/FileUploading.jsx";
-
 
 const Validation = () => {
     const {
@@ -47,3 +47,4 @@ const Validation = () => {
 };
 
 export default Validation;
+`

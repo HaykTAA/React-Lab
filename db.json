@@ -59,6 +59,26 @@
       "id": "9",
       "name": "dataBase",
       "project": "To Do List"
+    },
+    {
+      "id": "10",
+      "name": "context",
+      "project": "add to list"
+    },
+    {
+      "id": "11",
+      "name": "fileUploading",
+      "project": "square"
+    },
+    {
+      "id": "11",
+      "name": "reducer",
+      "project": "idk"
+    },
+    {
+      "id": "12",
+      "name": "redux",
+      "project": "idk"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
