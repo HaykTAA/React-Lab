@@ -1,5 +1,16 @@
 {
-  "apps": [],
+  "apps": [
+    {
+      "name": "ffff",
+      "id": "j6oBlI-G5mo"
+    }
+  ],
+  "toDo": [
+    {
+      "name": "casca",
+      "id": "Bz0hZvhYex4"
+    }
+  ],
   "currentUser": {
     "username": "a",
     "email": "a@a.a",
@@ -23,7 +34,7 @@
     {
       "id": "2",
       "name": "useState",
-      "project": "ToDo"
+      "project": "To Do"
     },
     {
       "id": "3",
@@ -73,12 +84,32 @@
     {
       "id": "12",
       "name": "reducer",
-      "project": "idk"
+      "project": "to do list "
     },
     {
       "id": "13",
-      "name": "redux",
-      "project": "idk"
+      "name": "reduxFront",
+      "project": "to do list "
+    },
+    {
+      "id": "14",
+      "name": "reduxBack",
+      "project": "to do list"
+    },
+    {
+      "id": "15",
+      "name": "useRef",
+      "project": "to do list"
+    },
+    {
+      "id": "16",
+      "name": "useMemo",
+      "project": "to do list"
+    },
+    {
+      "id": "17",
+      "name": "useCallback",
+      "project": "to do list"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

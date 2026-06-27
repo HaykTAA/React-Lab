@@ -8,7 +8,8 @@ import I18nextBrowserLanguageDetector from "i18next-browser-languagedetector";
 import {initReactI18next} from "react-i18next";
 import I18NextHttpBackend from "i18next-http-backend";
 import SleepProvider from "./Components/Lessons/context/Context.jsx";
-
+import {Provider} from "react-redux";
+import store from "./Components/Lessons/redux/store.js";
 i18next
     .use(initReactI18next)
     .use(I18nextBrowserLanguageDetector)
@@ -23,11 +24,13 @@ i18next
 
 
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-      <BrowserRouter>
-          <SleepProvider>
-              <App/>
-          </SleepProvider>
-      </BrowserRouter>
-  </StrictMode>,
+  <Provider store={store}>
+      <StrictMode>
+          <BrowserRouter>
+              <SleepProvider>
+                  <App/>
+              </SleepProvider>
+          </BrowserRouter>
+      </StrictMode>,
+  </Provider>
 )

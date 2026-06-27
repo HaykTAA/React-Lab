@@ -26,8 +26,16 @@ import Upload from "../Components/Lessons/files uploading/Upload.jsx";
 import {UploadCode} from "../Components/Lessons/files uploading/UploadCode.js";
 import Reducer from "../Components/Lessons/reducer/Reducer.jsx";
 import {ReducerCode} from "../Components/Lessons/reducer/ReducerCode.js";
-import Redux from "../Components/Lessons/redux/Redux.jsx";
-import {ReduxCode} from "../Components/Lessons/redux/ReduxCode.js";
+import ReduxFront from "../Components/Lessons/redux/reduxFront/ReduxFront.jsx";
+import {ReduxFrontCode} from "../Components/Lessons/redux/reduxFront/ReduxFrontCode.js";
+import ReduxBack from "../Components/Lessons/redux/reduxBack/ReduxBack.jsx";
+import {ReduxBackCode} from "../Components/Lessons/redux/reduxBack/ReduxBackCode.js";
+import UseRef from "../Components/Lessons/useRef/UseRef.jsx";
+import {UseRefCode} from "../Components/Lessons/useRef/UseRefCode.js";
+import {UseMemoCode} from "../Components/Lessons/useMemo+useCallBack/useMemo/UseMemoCode.js";
+import UseMemo from "../Components/Lessons/useMemo+useCallBack/useMemo/UseMemo.jsx";
+import {UseCallBackCode} from "../Components/Lessons/useMemo+useCallBack/useCallBack/UseCallBackCode.js";
+import UseCallBack from "../Components/Lessons/useMemo+useCallBack/useCallBack/UseCallBack.jsx";
 
 const TopicModal = () => {
     const navigate = useNavigate();
@@ -89,9 +97,25 @@ const TopicModal = () => {
             component: <Reducer/>,
             code: ReducerCode,
         },
-        redux:{
-            component: <Redux/>,
-            code: ReduxCode,
+        reduxFront:{
+            component: <ReduxFront/>,
+            code: ReduxFrontCode,
+        },
+        reduxBack:{
+            component: <ReduxBack/>,
+            code: ReduxBackCode,
+        },
+        useRef:{
+            component: <UseRef/>,
+            code: UseRefCode,
+        },
+        useMemo:{
+            component: <UseMemo/>,
+            code: UseMemoCode,
+        },
+        useCallback:{
+            component: <UseCallBack/>,
+            code: UseCallBackCode,
         }
     }
 
